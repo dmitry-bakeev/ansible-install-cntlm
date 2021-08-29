@@ -20,3 +20,9 @@
   - name: Install cntlm package to remote server
     apt:
       deb: "{{ cntlm_path }}"
+
+  - name: Set configuration for cmtlm
+    template:
+      src: ./templates/cntlm.conf.j2
+      dest: /etc/cntlm.conf
+      mode: 0644
