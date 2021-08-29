@@ -2,3 +2,7 @@
 ansible_python_interpreter: /usr/bin/python3
 ansible_user: root
 ansible_ssh_private_key_file: "{{ ssh_private_key_file }}"
+
+cntlm_download_url: "http://archive.ubuntu.com/ubuntu/pool/universe/c/cntlm/cntlm_0.92.3-1ubuntu2_amd64.deb"
+cntlm_path: /root/cntlm.deb
+cntlm_path_master: ./cntlm.deb

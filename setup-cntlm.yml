@@ -1,0 +1,22 @@
+---
+- name: Install cntlm on remote server in local network
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: Download cntlm package to master server
+    become: no
+    get_url:
+      url: "{{ cntlm_download_url }}"
+      dest: "{{ cntlm_path_master }}"
+    delegate_to: 127.0.0.1
+    run_once: True
+
+  - name: Copy cntlm package to remote server
+    copy:
+      src: "{{ cntlm_path_master }}"
+      dest: "{{ cntlm_path }}"
+
+  - name: Install cntlm package to remote server
+    apt:
+      deb: "{{ cntlm_path }}"
