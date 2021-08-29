@@ -26,3 +26,11 @@
       src: ./templates/cntlm.conf.j2
       dest: /etc/cntlm.conf
       mode: 0644
+    notify:
+      - Restart cntlm
+
+  handlers:
+    - name: Restart cntlm
+      service:
+        name: cntlm
+        state: restarted
