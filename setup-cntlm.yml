@@ -29,6 +29,15 @@
     notify:
       - Restart cntlm
 
+  - name: Set http and https proxy on remote server
+    lineinfile:
+      path: /etc/environment
+      line: "{{ item }}_proxy=\"http://{{ localhost_ip }}:{{ cntlm_listen }}\""
+      create: yes
+    with_items:
+      - http
+      - https
+
   handlers:
     - name: Restart cntlm
       service:

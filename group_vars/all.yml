@@ -14,3 +14,5 @@ cntlm_proxy:
   - 10.0.0.1:8080
 cntlm_noproxy: "localhost, 127.0.0.*, 10.*, 192.168.*"
 cntlm_listen: 3128
+
+localhost_ip: 127.0.0.1
