@@ -1,3 +1,6 @@
 # Ignore ssh keys
 *.pem
 *.pub
+
+# Ignore downloaded .deb package cntlm
+*.deb
